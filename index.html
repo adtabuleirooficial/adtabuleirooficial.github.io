@@ -6,22 +6,62 @@
     <title>Igreja AD Tabuleiro</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* 100% da altura da viewport */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
             text-align: center;
-            padding: 50px;
         }
 
         h1 {
-            color: #333;
+            margin: 0;
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+            color: #555;
+            text-align: center; /* Centraliza o texto no meio da página */
+        }
+
+        .pastor {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #777;
+        }
+
+        main {
+            flex-grow: 1; /* Faz o conteúdo central crescer */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-top: 30px;
         }
 
         .button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             padding: 15px 30px;
             margin: 10px;
@@ -29,20 +69,43 @@
             text-decoration: none;
             font-size: 18px;
             border-radius: 5px;
-            transition: opacity 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Animação suave */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: scale(1); /* Define o estado inicial */
         }
 
+        .button img {
+            margin-right: 10px;
+            max-height: 24px;
+            max-width: 24px;
+        }
+
+        /* Efeito hover para aumentar o botão */
         .button:hover {
-            opacity: 0.8;
+            background-color: #444;
+            transform: scale(1.1); /* Aumenta o botão em 10% */
         }
 
-        /* Botões com cores específicas */
+        /* Estilos individuais para ícones */
+        .youtube img {
+            max-width: 30px;  /* Ajusta o ícone do YouTube mais largo */
+            height: auto;
+        }
+
+        .location img {
+            max-width: 20px;  /* Ajusta o ícone de localização mais estreito */
+            height: auto;
+        }
+
+        /* Estilos dos botões */
         .youtube {
             background-color: #FF0000; /* Vermelho do YouTube */
         }
 
         .instagram {
-            background-color: #C13584; /* Rosa do Instagram */
+            background-color: white; /* Branco para realçar o ícone do Instagram */
+            color: #C13584; /* Cor rosa do Instagram para o texto */
+            border: 2px solid #C13584; /* Bordas para manter o estilo do Instagram */
         }
 
         .facebook {
@@ -52,19 +115,55 @@
         .location {
             background-color: #34A853; /* Verde do Google Maps */
         }
+
+        .whatsapp {
+            background-color: #25D366; /* Verde do WhatsApp */
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            width: 100%; /* Ocupa 100% da largura da tela */
+            position: absolute;
+            bottom: 0; /* Fixa o rodapé no final da página */
+        }
     </style>
 </head>
 <body>
 
-    <h1>Bem-vindo à Igreja AD Tabuleiro</h1>
-    <p>Nos siga nas redes sociais e veja nossa localização:</p>
+<header>
+    <h1>Igreja Assembleia de Deus - Tabuleiro do Martins</h1>
+    <p class="pastor">Pastor Local: Luciano de Aquino</p>
+</header>
+
+<main>
+    <p>Que a Paz do Senhor Jesus esteja com todos. Bem-vindos à nossa família! Curtam, comentem, compartilhem e sigam nossas redes sociais. Venham nos visitar!</p>
 
     <div class="button-container">
-        <a href="https://www.youtube.com/@adtabuleirooficial" class="button youtube" target="_blank">YouTube</a>
-        <a href="https://www.instagram.com/adtabuleirooficial/" class="button instagram" target="_blank">Instagram</a>
-        <a href="https://www.facebook.com/adtabuleirooficial/?locale=pt_BR" class="button facebook" target="_blank">Facebook</a>
-        <a href="https://maps.app.goo.gl/ZwtzL5NtwjXRzVpu6" class="button location" target="_blank">Localização</a>
+        <a href="https://www.youtube.com/@adtabuleirooficial" class="button youtube" target="_blank">
+            <img src="assets/youtube_icon.png" alt="YouTube"> YouTube
+        </a>
+        <a href="https://www.instagram.com/adtabuleirooficial/" class="button instagram" target="_blank">
+            <img src="assets/instagram_icon.png" alt="Instagram"> Instagram
+        </a>
+        <a href="https://www.facebook.com/adtabuleirooficial/?locale=pt_BR" class="button facebook" target="_blank">
+            <img src="assets/facebook_icon.png" alt="Facebook"> Facebook
+        </a>
+        <a href="https://maps.app.goo.gl/ZwtzL5NtwjXRzVpu6" class="button location" target="_blank">
+            <img src="assets/googlemaps_icon.png" alt="Localização"> Localização
+        </a>
+        <a href="https://chat.whatsapp.com/Euj2eJisKct56UdUEM9eBf" class="button whatsapp" target="_blank">
+            <img src="assets/whatsapp_icon.png" alt="WhatsApp"> WhatsApp
+        </a>
     </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Igreja Assembleia de Deus - Tabuleiro do Martins em Maceió no estado de Alagoas. Todos os direitos reservados.</p>
+</footer>
 
 </body>
 </html>
