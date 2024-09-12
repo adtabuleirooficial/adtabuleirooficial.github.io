@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Igreja AD Tabuleiro</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f2f2f2;
             color: #333;
             margin: 0;
             padding: 0;
-            height: 100vh; /* 100% da altura da viewport */
+            min-height: 100vh; /* Garante que o body tenha no mínimo 100% da altura da viewport */
             display: flex;
             flex-direction: column;
         }
@@ -43,12 +49,13 @@
         }
 
         main {
-            flex-grow: 1; /* Faz o conteúdo central crescer */
+            flex-grow: 1; /* O main cresce para preencher o espaço disponível */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 10px;
         }
 
         .button-container {
@@ -127,8 +134,29 @@
             padding: 15px 0;
             font-size: 14px;
             width: 100%; /* Ocupa 100% da largura da tela */
-            position: absolute;
-            bottom: 0; /* Fixa o rodapé no final da página */
+            margin-top: auto; /* Garante que o rodapé fique sempre no final da página */
+        }
+
+        /* Estilos para dispositivos móveis */
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+
+            .button {
+                width: 100%; /* Faz os botões ocuparem 100% da largura da tela em dispositivos móveis */
+                max-width: 400px; /* Limita a largura dos botões */
+            }
+
+            footer {
+                font-size: 12px; /* Diminui o tamanho da fonte no rodapé em telas menores */
+            }
+        }
+
+        /* Permitir rolagem se o conteúdo for maior que a tela */
+        html, body {
+            overflow-x: hidden; /* Evitar rolagem horizontal */
+            overflow-y: auto; /* Ativar rolagem vertical se necessário */
         }
     </style>
 </head>
@@ -153,7 +181,7 @@
             <img src="assets/facebook_icon.png" alt="Facebook"> Facebook
         </a>
         <a href="https://maps.app.goo.gl/ZwtzL5NtwjXRzVpu6" class="button location" target="_blank">
-            <img src="assets/googlemaps_icon.png" alt="Localização"> Localização
+            <img src="assets/location_icon.png" alt="Localização"> Localização
         </a>
         <a href="https://chat.whatsapp.com/Euj2eJisKct56UdUEM9eBf" class="button whatsapp" target="_blank">
             <img src="assets/whatsapp_icon.png" alt="WhatsApp"> WhatsApp
